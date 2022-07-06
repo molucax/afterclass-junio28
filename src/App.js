@@ -1,14 +1,16 @@
 import AxiosExample from "./components/AxiosExample";
 import ItemListContainer from "./components/ItemListContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 function App() {
   return (
-    <div>
-      <h1>ItemListContainer:</h1>
-      <ItemListContainer />
-      <h1>Axios:</h1>
-      <AxiosExample />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/axios" element={<AxiosExample />} />
+        <Route path="/axios/:house" element={<AxiosExample />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
